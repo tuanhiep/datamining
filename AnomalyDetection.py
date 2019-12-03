@@ -31,7 +31,8 @@ clf = LocalOutlierFactor(n_neighbors=10, metric='euclidean', contamination=0.1)
 # (when LOF is used for outlier detection, the estimator has no predict,
 # decision_function and score_samples methods).
 tstart = time()
-y_pred = clf.fit_predict(X)
+clf.fit_predict(X)
+y_pred = clf.negative_outlier_factor_
 processing_time = time() - tstart
 
 false_positive_rate, true_positive_rate, thresholds = metrics.roc_curve(ground_truth, y_pred)
