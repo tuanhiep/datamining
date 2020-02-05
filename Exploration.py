@@ -4,12 +4,12 @@ import numpy as np
 
 # 1a. For each quantitative attribute, calculate its average, standard deviation, minimum, and maximum
 # values.
-data = pd.read_csv('csv/BreastCancerCoimbra.csv', header=None)
+data = pd.read_csv('csv/BreastCancerCoimbra.csv', header="infer")
 pd.set_option('display.max_columns', None)
 pd.set_option('display.max_rows', None)
 
 print(data.head(10))
-data = data.convert_objects(convert_numeric=True)
+# data = data.convert_objects(convert_numeric=True)
 from pandas.api.types import is_numeric_dtype
 
 for col in data.columns:
